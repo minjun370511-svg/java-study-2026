@@ -53,7 +53,7 @@
 
 ## 배운 점
 
-### boolean 사용 (problem12)
+### boolean 사용 (chapter03 problem04)
 
 좋은 코드
 ```java
@@ -67,7 +67,7 @@ boolean hasId = true;
 (age > 20) && (hasId == true);
 ```
 
-### printf 사용 (problem7,8)
+### printf 사용 (chaper02 problem07,08)
 소수점 둘째자리까지 출력
 ```java
 System.out.printf("%.2f", average);
@@ -124,3 +124,81 @@ Scanner를 이용한 입력 처리와 연산자 사용에 익숙해졌다.
 특히 Problem14와 Problem15를 통해 중첩 for문과 공백, 별의 규칙을 이해할 수 있었다.
 
 대부분의 문제를 힌트 없이 해결해서 조건문과 반복문에 익숙해졌다는 느낌을 받았다.
+
+# Day3 (2026-06-04)
+
+## 학습 내용
+
+### 4장
+
+* switch 문
+* while 문
+* do-while 문
+* break 문
+* continue 문
+* 반복문 응용
+
+### 5장
+
+* 배열 선언
+* 배열 생성
+* 배열 길이(length)
+* 배열 순회
+* 최대값 / 최소값 찾기
+* 역순 출력
+
+---
+
+## 실습 문제
+
+| 문제           | 내용                     | 난이도   |
+| ------------ | ---------------------- | ----- |
+| Problem16    | switch 문으로 계절 출력       | ★     |
+| Problem17    | while 문으로 1~N 합 구하기    | ★     |
+| Problem18    | while 문 역순 출력          | ★     |
+| Problem19    | do-while 입력값 합계        | ★★    |
+| Problem20    | break 사용               | ★     |
+| Problem21    | continue 사용            | ★     |
+| Problem22    | 1~N 짝수 개수와 합           | ★★    |
+| Problem23    | 1~N 3의 배수 개수와 합        | ★★    |
+| Problem24    | 1~N 7의 배수 출력 및 개수      | ★★★   |
+| Problem25 ⭐  | 3의 배수 제외, 5의 배수 출력 및 합 | ★★★★  |
+| Problem26    | 약수 출력 및 개수 구하기         | ★★★★  |
+| Problem27    | 최대값 찾기                 | ★★★★  |
+| Problem28 ⭐⭐ | 소수 판별                  | ★★★★★ |
+| Problem01    | 배열 입력 후 출력             | ★     |
+| Problem02    | 배열 총합 구하기              | ★★    |
+| Problem03    | 배열 평균 구하기              | ★★    |
+| Problem04    | 배열 최대값 찾기              | ★★★   |
+| Problem05    | 배열 최대값·최소값 찾기          | ★★★★  |
+| Problem06 ⭐  | 배열 역순 출력               | ★★★★  |
+
+---
+
+## 배운 점
+
+### 배열 마지막 인덱스 (Chapter05 Problem06)
+
+잘못된 코드
+
+```java
+scores[scores.length]
+```
+
+올바른 코드
+
+```java
+scores[scores.length - 1]
+```
+
+배열의 마지막 인덱스는 length가 아니라 length - 1 이다.
+
+---
+
+## 느낀 점
+
+반복문을 이용해 다양한 조건을 처리하는 방법에 익숙해졌다.
+
+배열에서는 length를 활용한 순회와 최대·최소값 찾기, 역순 출력 방법을 배울 수 있었다.
+
+특히 배열 인덱스가 0부터 시작하고 마지막 인덱스는 length - 1이라는 점을 실수하면서 확실하게 이해할 수 있었다.
