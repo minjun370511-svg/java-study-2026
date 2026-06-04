@@ -2,7 +2,7 @@ package chapter03;
 
 import java.util.Scanner;
 
-public class Day01_Problem13 {
+public class Day01_Problem05 {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         System.out.print("숫자 입력 : ");

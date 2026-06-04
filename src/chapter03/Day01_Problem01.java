@@ -1,6 +1,6 @@
 package chapter03;
 
-public class Day01_Problem09 {
+public class Day01_Problem01 {
     public static void main(String[] args) {
         int money=135760;
         int bill50000=135760/50000;

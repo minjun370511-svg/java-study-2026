@@ -1,6 +1,6 @@
 package chapter03;
 
-public class Day01_Problem12 {
+public class Day01_Problem04 {
     public static void main(String[] args) {
         int age = 22;
         boolean hasId = true;
