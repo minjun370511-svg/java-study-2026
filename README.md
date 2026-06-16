@@ -725,3 +725,82 @@ maxDevice.getClass().getSimpleName()
 
 인터페이스 문법 자체는 어렵지 않았지만, 다형성을 이용해 여러 객체를 하나의 배열로 관리하고 통계 정보를 계산하는 과정에서 설계가 중요하다는 것을 느꼈다. 특히 Problem20은 구현은 완료했지만 순위 갱신 로직을 놓쳤던 부분을 수정하면서 최대값 문제를 더 깊게 이해할 수 있었다.
 
+# Day11 (2026-06-16)
+
+## 학습 내용
+
+- Chapter08 인터페이스 종합 문제
+- 인터페이스 배열 활용
+- DeviceManager 클래스를 이용한 기능 분리
+- 객체 반환 메서드 구현
+- 최대값, 최소값, 평균값 계산
+- 객체 통계 처리
+- 선택 정렬(Selection Sort) 구현
+
+---
+
+## 실습 문제
+
+| 문제 번호 | 문제 제목 | 중요도 | 난이도 |
+|------------|------------|----------|----------|
+| Problem21 ⭐⭐ | 최고 전력 사용 기기 찾기 | ★★★★ |
+| Problem22 | 기준 전력 이상 첫 번째 기기 찾기 | ★★★ |
+| Problem23 | 최저 전력 사용 기기 찾기 | ★★★ |
+| Problem24 ⭐ | 기기 종류별 개수 세기 | ★★★★ |
+| Problem25 | 평균 전력 이상 기기 개수 구하기 | ★★★ |
+| Problem26 ⭐⭐ | 전체 전력 통계 시스템 만들기 | ★★★★★ |
+| Problem27 ⭐⭐⭐ | 전력 관리 종합 시스템 만들기 | ★★★★★ |
+| Problem28 ⭐⭐⭐ | 전력 사용량 순위 출력하기 | ★★★★★ |
+
+---
+
+## 배운 점
+
+### Chapter08 - Problem21
+
+DeviceManager 객체를 생성한 뒤 메서드를 호출하고 반환값을 받아 사용하는 구조를 처음에는 바로 떠올리지 못했다.
+
+```java
+DeviceManager21 deviceManager21 = new DeviceManager21();
+Device21 maxPowerDevice = deviceManager21.findMaxPowerDevice(device21s);
+```
+
+그동안은 main에서 직접 처리하는 방식에 익숙했는데, 기능을 별도의 관리 클래스에 분리하고 결과만 받아오는 객체지향적인 구조를 다시 한번 익힐 수 있었다.
+
+### Chapter08 - Problem28
+
+처음에는 별도의 ranking 배열을 만들어 적절한 위치에 삽입하는 방식으로 접근했다.
+
+```java
+Device28[] rankings = new Device28[device28s.length];
+```
+
+순위 배열을 유지하면서 새로운 객체를 적절한 위치에 삽입하려고 했지만, 배열 요소를 뒤로 밀어내는 과정에서 반복문 조건과 인덱스 처리가 복잡해 구현에 실패했다.
+
+이후 선택 정렬 방식을 사용해 해결했다.
+
+```java
+for (int i = 0; i < device28s.length; i++) {
+    int maxIndex = i;
+
+    for (int j = i + 1; j < device28s.length; j++) {
+        if (device28s[j].getPowerUsage() >
+            device28s[maxIndex].getPowerUsage()) {
+            maxIndex = j;
+        }
+    }
+
+    Device28 temp = device28s[i];
+    device28s[i] = device28s[maxIndex];
+    device28s[maxIndex] = temp;
+}
+```
+
+정렬을 아직 배우지 않은 상태였지만 순위 배열을 유지하는 아이디어를 떠올렸고, 최종적으로는 선택 정렬의 원리를 이해할 수 있었다.
+
+---
+
+## 느낀 점
+
+이번 Chapter08은 인터페이스 문법보다 다형성을 활용해 객체를 관리하는 방식에 익숙해지는 과정이었다. DeviceManager를 활용한 기능 분리 구조를 이해할 수 있었고, 마지막 Problem28에서는 처음으로 정렬 개념을 직접 다뤄보면서 구현 방식의 차이를 경험할 수 있었다. Chapter08을 충분히 이해하고 마무리한 느낌이다.
+
